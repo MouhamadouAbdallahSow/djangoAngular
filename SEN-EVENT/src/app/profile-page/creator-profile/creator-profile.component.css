@@ -1,0 +1,406 @@
+/* Hero Image */
+.hero-image {
+  position: relative;
+  background-image: url('/assets/images/Lopposant-senegalais-Ousmane-Sonko-8-2021-Dakar_0.webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw; /* Prend toute la largeur de l'écran */
+  height: 90vh; /* Ajustable selon besoin */
+  left: 50%; /* Pour compenser le retrait du container */
+  transform: translateX(-50%);
+}
+
+
+/* Carte de profil */
+.profile-card {
+  position: absolute;
+  bottom: -15%;
+  left: 15%;
+  transform: translateX(-50%);
+  border-radius: 15px;
+  text-align: center;
+}
+.profil_middle_section {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 25%;
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 3px solid #1E3E62;
+}
+
+/* Bouton personnalisé */
+.btn-custom {
+  background-color: #1E3E62;
+  color: white;
+  border-radius: 25px;
+  padding: 10px 20px;
+}
+
+.btn-custom:hover {
+  background-color: #FF6B35;
+}
+
+/* Styles personnalisés */
+
+.event-param{
+  gap: 20px;
+}
+.event-card {
+  background-color: rgba(30, 62, 98, 0.1);
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.icon-circle {
+  width: 70px;
+  height: 70px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.icon-circle i {
+  font-size: 24px;
+  color: black;
+}
+
+.event-btn {
+  width: 80%;
+  background-color: #1E3E62; /* Bleu foncé */
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 10px;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow-circle {
+  width: 30px;
+  height: 30px;
+  background-color: #ff6600; /* Orange */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-circle i {
+  color: white;
+  font-size: 16px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.btn-custom {
+  background-color: #1E3E62;
+  color: white;
+  border-radius: 25px;
+  padding: 10px 20px;
+}
+
+.btn-custom:hover {
+  background-color: #FF6B35;
+}
+
+.text-center {
+  margin-top: auto;
+}
+
+/* Boîte statistique */
+.card {
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+.big-card {
+  background-color: #1E3E62;
+  color: white;
+  height: 100%;
+}
+
+.event-thumbnail {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 20px;
+}
+
+.event-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #4a5568;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.big-number {
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  color: #1E3E62;
+  margin: 10px 0;
+}
+
+.white-text {
+  color: white;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 10px;
+  color: #ff6b35;
+}
+
+.icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.icon-blue svg {
+  color: #4c6ef5;
+}
+
+.more-button {
+  background-color: #1E3E62;
+  color: white;
+  border-radius: 50px;
+  padding: 10px 20px;
+  float: right;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 120px;
+}
+
+.more-button:hover {
+  background-color: #152b48;
+}
+
+.more-button svg {
+  background-color: #ff6b35;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  padding: 4px;
+}
+
+
+:root {
+  --primary-blue: #1e3a5f;
+  --text-dark: #1e3a5f;
+  --background-light: #f8f9fa;
+}
+
+
+.carousel-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.carousel-info {
+  padding: 2rem;
+  flex: 1;
+}
+
+.carousel-image {
+  flex: 1;
+  height: 400px;
+  overflow: hidden;
+}
+
+.carousel-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-title {
+  color: var(--text-dark);
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.carousel-subtitle {
+  color: var(--text-dark);
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+}
+
+.icon-container {
+  background-color: #fe934c;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+.icon-container .fas{
+  color: #ff6600;
+}
+.info-content {
+  flex: 1;
+}
+
+.info-title {
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.info-subtitle {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.btn-modify {
+  background-color: #1E3E62;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  width: 180px;
+}
+
+.btn-modify:hover {
+  background-color: #FF6B35;
+  color: white;
+}
+
+.carousel-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.carousel-arrow {
+  width: 40px;
+  height: 40px;
+  background-color: #1E3E62;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+
+.carousel-dots {
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+}
+
+.dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 0 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #6c757d;
+}
+
+.dot.active {
+  background-color: #FF6B35;
+  color: white;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-item {
+  position: relative;
+  display: none;
+  width: 100%;
+}
+
+.carousel-item.active {
+  display: block;
+}
+
+@media (max-width: 992px) {
+  .carousel-slide {
+      flex-direction: column-reverse;
+  }
+  
+  .carousel-image, .carousel-info {
+      flex: none;
+      width: 100%;
+  }
+  
+  .carousel-image {
+      height: 300px;
+  }
+}

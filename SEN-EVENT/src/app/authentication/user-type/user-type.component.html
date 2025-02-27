@@ -1,0 +1,47 @@
+
+<div class="container d-flex align-items-center justify-content-center">
+  <div class="text-center w-100" style="max-width: 500px;">
+    <h1 class="mb-4">Que voulez-vous être ?</h1>
+    <p class="my-4">
+      Bienvenue sur SEN-EVENT, la plateforme qui connecte les créateurs d'événements aux passionnés en quête d'expériences inoubliables !
+    </p>
+
+    <div class="row g-4 my-5">
+      <!-- Carte Visiteur -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm cursor-pointer text-center"
+             (click)="profileType = 'visitor'"
+             [class.border-primary]="profileType === 'visitor'">
+          <div class="card-body">
+            <img src="assets/images/visitor-icon.png" class="icon_user_type mb-3" alt="Visiteur">
+            <h3 class="card-title">VISITEUR</h3>
+            <p class="card-text">Découvrez et participez aux meilleurs événements !</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte Créateur -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm cursor-pointer text-center"
+             (click)="profileType = 'creator'"
+             [class.border-primary]="profileType === 'creator'">
+          <div class="card-body">
+            <img src="assets/images/creator-icon.png" class="icon_user_type mb-3" alt="Créateur">
+            <h3 class="card-title">CREATEUR</h3>
+            <p class="card-text">Organisez et partagez vos événements.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form (ngSubmit)="onSubmit()">
+      <button type="submit" class="btn btn-primary w-100 px-5">Terminer</button>
+    </form>
+
+    <p class="text-muted mt-4 small">
+      En créant ce compte, vous acceptez tous les 
+      <a href="#" class="text-primary">Terms of use</a> et 
+      <a href="#" class="text-primary">Privacy Policy</a>.
+    </p>
+  </div>
+</div>

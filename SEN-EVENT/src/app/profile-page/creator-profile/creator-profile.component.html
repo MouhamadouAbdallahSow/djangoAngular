@@ -1,0 +1,17 @@
+<div class="profile">
+  <h2>Profil Créateur</h2>
+  <p>Nom : {{ user?.name }}</p>
+  <p>Email : {{ user?.email }}</p>
+  
+  <!-- Utiliser directement l'URL complète du profile_photo -->
+  <div *ngIf="user?.profile_photo">
+    <h3>Photo de profil</h3>
+    <img [src]="user.profile_photo" alt="Photo profile" style="max-width: 200px;"/>
+  </div>
+  
+  <!-- Utiliser directement l'URL complète du cover_photo -->
+  <div *ngIf="user?.cover_photo">
+    <h3>Photo de couverture</h3>
+    <img [src]="user.cover_photo" alt="Photo couverture" style="max-width: 400px;"/>
+  </div>
+</div>

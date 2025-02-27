@@ -1,0 +1,72 @@
+<nav
+  class="navbar navbar-expand-lg navbar-light fixed-top"
+  [ngClass]="{ scrolled: scrolled }"
+>
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="logo_sen_event-removebg-preview.png" alt="SEN-EVENT Logo" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="scrollToSection('about')">À propos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="scrollToSection('events')">Evenement</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="scrollToSection('temoignages')"
+            >Témoignages</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="scrollToSection('contact')">Contact</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input
+          class="form-control searchbar px-4"
+          type="search"
+          placeholder="Recherche"
+          aria-label="Search"
+        />
+        <button class="btn searchbtn px-3" style="border: none" type="submit">
+          <i style="color: white" class="bi bi-search"></i>
+        </button>
+      </form>
+      <div class="d-flex align-items-center">
+        <button class="btn" style="background-color: inherit; color: #ff6500">
+          <i class="bi bi-bell"></i>
+        </button>
+
+        <!-- Si l'utilisateur est connecté -->
+        <ng-container *ngIf="isAuthenticated; else guestLinks">
+          <button class="btn btn-danger" (click)="logout()">
+            Se déconnecter
+          </button>
+          <a routerLink="/profile" class="btn btn-outline-primary">
+            <i class="bi bi-person-circle"></i>
+          </a>
+        </ng-container>
+
+        <!-- Si l'utilisateur n'est PAS connecté -->
+        <ng-template #guestLinks>
+          <a routerLink="/auth/create-account" class="btn createCount">
+            Créer un compte
+          </a>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</nav>

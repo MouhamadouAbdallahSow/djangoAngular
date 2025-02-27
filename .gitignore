@@ -1,0 +1,88 @@
+# ------------------------------
+# Fichiers et dossiers Python/Django
+# ------------------------------
+# Fichiers compilés Python
+*.py[cod]
+__pycache__/
+
+# Fichiers de build, distributions et eggs
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Environnements virtuels
+env/
+venv/
+ENV/
+VENV/
+
+# Fichiers d'environnement et configurations locales
+*.env
+local_settings.py
+
+# Base de données (si vous utilisez SQLite en développement)
+*.sqlite3
+
+# Logs et autres fichiers temporaires
+*.log
+
+# ------------------------------
+# Fichiers et dossiers Angular/Node
+# ------------------------------
+# Répertoire de build et fichiers temporaires
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Dépendances Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# ------------------------------
+# IDEs et éditeurs
+# ------------------------------
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# ------------------------------
+# Autres fichiers et dossiers divers
+# ------------------------------
+# Cache Angular et Sass
+/.angular/cache
+.sass-cache/
+
+# Fichiers temporaires et divers
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# ------------------------------
+# Fichiers générés par Django (statics et media)
+# ------------------------------
+# Dossier de fichiers statiques collectés (généré via collectstatic)
+staticfiles/
+
+# Dossier des fichiers uploadés (si non versionnés)
+media/

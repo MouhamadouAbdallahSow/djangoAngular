@@ -1,0 +1,110 @@
+<div class="container my-5">
+  <div class="text-center">
+    <h4 class="mb-4">Télécharger une image ou une vidéo</h4>
+  </div>
+
+  <p class="text-muted">
+    L'image ou la vidéo doit mesurer au moins 1170 pixels de large par 504
+    pixels de haut.
+  </p>
+
+  <form [formGroup]="mediaForm" (ngSubmit)="onSubmit()">
+    <!-- Choix entre Image ou Vidéo -->
+    <div class="mb-4">
+      <label class="form-label">Type de média :</label>
+      <select
+        formControlName="mediaType"
+        class="form-select"
+        (change)="onMediaTypeChange($event)"
+      >
+        <option value="image">Image</option>
+        <option value="video">Vidéo</option>
+      </select>
+    </div>
+
+    <!-- Section pour l'Image -->
+    <div *ngIf="selectedMediaType === 'image'">
+      <label class="form-label">Télécharger une image :</label>
+      <div
+        class="border border-warning rounded p-4 text-center mb-3"
+        style="min-height: 150px"
+      >
+        <p class="mb-3 text-muted">
+          Glissez vos fichiers ici ou
+          <span
+            class="text-primary"
+            style="cursor: pointer"
+            (click)="fileInput.click()"
+            >parcourir</span
+          >
+        </p>
+
+        <!-- Input file caché -->
+        <input
+          type="file"
+          #fileInput
+          (change)="onFileSelect($event)"
+          accept=".jpg,.jpeg,.png,.gif"
+          style="display: none"
+        />
+
+        <small class="text-muted">
+          Format de fichiers valides : .jpg, .jpeg, .png, .gif <br />
+          Fichiers de 10 Mo maximum autorisés
+        </small>
+      </div>
+    </div>
+
+    <!-- Section pour la Vidéo -->
+    <div *ngIf="selectedMediaType === 'video'">
+      <label class="form-label">Télécharger une vidéo :</label>
+      <div
+        class="border border-warning rounded p-4 text-center mb-3"
+        style="min-height: 150px"
+      >
+        <p class="mb-3 text-muted">
+          Glissez vos fichiers ici ou
+          <span
+            class="text-primary"
+            style="cursor: pointer"
+            (click)="fileInput.click()"
+            >parcourir</span
+          >
+        </p>
+
+        <!-- Input file caché -->
+        <input
+          type="file"
+          #fileInput
+          (change)="onFileSelect($event)"
+          accept=".mp4,.mov,.avi"
+          style="display: none"
+        />
+
+        <small class="text-muted">
+          Format de fichiers valides : .mp4, .mov, .avi <br />
+          Fichiers de 50 Mo maximum autorisés
+        </small>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-between mt-4">
+      <button
+        type="button"
+        class="btn btn-back"
+        id="prevBtn"
+        (click)="goBack()"
+      >
+        Retourner à Modifier l'événement
+      </button>
+      <button
+        type="submit"
+        class="btn btn-next"
+        id="nextBtn"
+        [disabled]="mediaForm.invalid"
+      >
+        Continuer
+      </button>
+    </div>
+  </form>
+</div>

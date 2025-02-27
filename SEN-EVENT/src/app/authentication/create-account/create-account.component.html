@@ -1,0 +1,160 @@
+<div class="container ">
+	<h2 class="text-center mb-3 mt-0">Créer un Compte</h2>
+	<p class="text-center mb-3">
+	  Vous avez déjà un compte ?
+	  <a routerLink="/auth/login" class="color-fav">Se connecter</a>
+	</p>
+  
+	<div class="container" style="max-width: 600px;">
+	  <form (ngSubmit)="register()" #registerForm="ngForm">
+		<!-- Rangée Prénom/Nom -->
+		<div class="row gx-3 mb-3">
+		  <div class="col-md-6">
+			<input
+			  type="text"
+				id="prenom"
+				name="prenom"
+			  class="form-control"
+			  placeholder="Prénom"
+				[(ngModel)]="prenom"
+			  required>
+		  </div>
+		  <div class="col-md-6">
+			<input
+			  type="text"
+				id="nom"
+				name="nom"
+			  class="form-control"
+			  placeholder="Nom"
+				[(ngModel)]="nom"
+			  required>
+		  </div>
+		</div>
+  
+		<!-- Rangée Email/Username -->
+		<div class="row gx-3 mb-3">
+		  <div class="col-md-6">
+				<input
+					type="email"
+					id="email"
+					name="email"
+					class="form-control"
+					placeholder="Email"
+					[(ngModel)]="email"
+					required>
+				<div class="text-danger" *ngIf="registerForm.submitted && !prenom">
+          Champ requis
+        </div>
+		  </div>
+		  <div class="col-md-6">
+				<input
+					type="text"
+					id="username"
+					name="username"
+					class="form-control"
+					placeholder="Nom d'utilisateur"
+					[(ngModel)]="username"
+					required>
+				<div class="text-danger" *ngIf="registerForm.submitted && !nom">
+          Champ requis
+        </div>
+		  </div>
+		</div>
+  
+		<!-- Photos -->
+		<div class="row gx-3 mb-3 toHide">
+		  <div class="col-md-6">
+			<label class="d-block mb-3">Photo de couverture</label>
+			<div class="input-group">
+			  <input
+				type="file"
+				class="form-control"
+				(change)="onFileSelected($event, 'cover')"
+				style="display: none;"
+				#coverInput>
+			  <button
+				type="button"
+				class="btn btn-outline-secondary w-100"
+				(click)="coverInput.click()">
+				Parcourir...
+			  </button>
+			</div>
+			<img *ngIf="coverPhotoUrl" [src]="coverPhotoUrl" class="preview-img mt-2">
+		  </div>
+  
+		  <div class="col-md-6">
+			<label class="d-block mb-3">Photo de profil</label>
+			<div class="input-group">
+			  <input
+				type="file"
+				class="form-control"
+				(change)="onFileSelected($event, 'profile')"
+				style="display: none;"
+				#profileInput>
+			  <button
+				type="button"
+				class="btn btn-outline-secondary w-100"
+				(click)="profileInput.click()">
+				Parcourir...
+			  </button>
+			</div>
+			<img *ngIf="profilePhotoUrl" [src]="profilePhotoUrl" class="preview-img mt-2">
+		  </div>
+		</div>
+  
+		<!-- Mots de passe -->
+		<div class="row gx-3 mb-3">
+		  <div class="col-md-6">
+			<input
+			  type="password"
+				id="password1"
+				name="password1"
+			  class="form-control"
+			  placeholder="Mot de passe"
+				[(ngModel)]="password1"
+			  required>
+			<div class="text-danger" *ngIf="registerForm.submitted && !password1">
+				Champ requis
+			</div>
+		  </div>
+		  <div class="col-md-6">
+			<input
+			  type="password"
+				id="password2"
+				name="password2"
+			  class="form-control"
+			  placeholder="Confirmer le mot de passe"
+				[(ngModel)]="password2"
+			  required>
+			<div class="text-danger" *ngIf="registerForm.submitted && !password2">
+				Champ requis
+			</div>
+		  </div>
+		</div>
+		<div class="text-danger" *ngIf="errorMessage">{{ errorMessage }}</div>
+		<!-- Checkbox -->
+		<div class="form-check my-3">
+		  <input class="form-check-input" type="checkbox" id="terms">
+		  <label class="form-check-label small" for="terms">
+			J'accepte les <a href="#" class="color-fav">conditions d'utilisation</a> et la
+			<a href="#" class="color-fav">politique de confidentialité</a> de SEN-EVENT
+		  </label>
+		</div>
+  
+		<button type="submit" class="btn btn-outline-secondary w-100 mb-2">Continuer</button> 
+		<div class="separator my-2">
+			<span>Ou</span>
+		  </div>
+		  <div class="social-login d-flex flex-column align-items-center">
+			<button class="btn btn-light w-100 d-flex align-items-center justify-content-center my-2">
+			  <img src="assets/images/google-icon.png" class="social-icon" alt="Google"> Se Connecter avec Google
+			</button>
+		  
+			<button class="btn btn-light w-100 d-flex align-items-center justify-content-center">
+			  <img src="assets/images/apple-icon.png" class="social-icon" alt="Apple"> Se Connecter avec Apple
+			</button>
+		  </div>
+	  </form>
+	</div>
+  
+  </div>

@@ -1,0 +1,131 @@
+.contact-section {
+    padding: 50px 0;
+    position: relative;
+    margin-bottom: -4%;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact-title {
+    color: #1E3E62;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.contact-form {
+    display: flex;
+    justify-content: center;
+    background-color: #1E3E62;
+    align-items: center;
+    position: relative;
+}
+
+.form-contact-section,
+.recruitment {
+    width: 50%; /* Chaque section prend 50% de la largeur */
+    height: 100%; /* Prend toute la hauteur du parent */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-contact-section {
+    background-color: #1E3E62;
+}
+
+
+.recruitment img {
+    width: 100%; /* Ajuste la taille de l'image */
+    height: auto;
+}
+
+/* Positionner le formulaire au-dessus */
+.form-container {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%); /* Centre parfaitement le formulaire */
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    z-index: 10; /* Met au-dessus des autres éléments */
+}
+
+
+.form-title {
+    color: #1E3E62;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    color: #1E3E62;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    border:none;
+    border-radius: 30px;
+    padding: 12px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #1E3E62;
+    box-shadow: none;
+}
+
+textarea.form-control {
+    min-height: 120px;
+}
+
+.submit-btn {
+    background-color: #1E3E62;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #2a4585;
+    transform: translateY(-2px);
+}
+@media (max-width: 768px) {
+    .contact-wrapper {
+        background: #1E3E62;
+    }
+    
+    .recruitment-text {
+        position: static;
+        text-align: center;
+        margin-bottom: 30px;
+        transform: none;
+        font-size: 2rem;
+    }
+
+    .form-container {
+        margin: 0 20px;
+    }
+}

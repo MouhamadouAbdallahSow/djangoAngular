@@ -1,0 +1,291 @@
+.profile-card {
+    overflow: hidden;
+}
+
+.profile-card img {
+    width: 100%;
+}
+
+.profile-card .profile-info {
+    display: flex;
+    margin-left: 100px;
+    justify-content: space-around;
+}
+
+.profile-card .profile-info h1 {
+    font-size: 1.8rem;
+    color: #1E3E62;
+}
+
+.profile-card .profile-info p {
+    margin: 5px 0;
+    color: #1E3E62;
+    font-size: 1.5rem;
+}
+
+.profile-card .stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    margin-left: 200px;
+}
+
+.profile-card .stats div {
+    text-align: center;
+}
+
+.profile-card .stats div h3 {
+    color: #1E3E62;
+    font-size: 2.2rem;
+}
+
+.profile-card .stats div p {
+    margin: 0;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+button, a.button {
+    display: inline-block;
+    border:1px solid #1E3E62;
+    padding: 10px 20px;
+    margin: 20px;
+    background-color: #1E3E62;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px  ;
+    font-size: 1rem;
+    margin-top: 40px;
+    cursor: pointer;
+}
+.rond{
+    width: 200px;
+    height: 200px;
+    display: block;
+    position: absolute;
+    top:65%;
+    left: 3%;
+    border-radius: 50%;
+}
+
+.mess{
+    color: #1E3E62  ;
+    background-color: #f4f4f9 
+}
+.im{
+      margin-top: 50px;
+}
+.danse{
+      border-radius: 100px;
+      width: 900px !important ;
+      height: 500px;
+      cursor: pointer;
+}
+.stat{
+    margin-top: 90px;
+    line-height: 20px;
+}
+.note{
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+}
+.note div{
+
+    background-color: #1E3E62;
+    color: #fff;
+    padding: 20px;
+    border-radius: 50px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    cursor: pointer;
+    
+}
+.im6{
+    display: flex;
+    margin-left: 70px;
+    margin-right: 70px;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.imm{
+        max-width: 650px !important ;
+        height: 400px;
+        margin-bottom: 30px;
+        height: auto; 
+        display: block; 
+        cursor: pointer;
+}
+.texte{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 50px;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.mois{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1E3E62;
+    margin-right: 50px !important;
+}
+.jour{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.cadre{
+    display: block;
+    background-color: #ffffff;
+    border-radius: 20px;
+    max-width: 650px;
+    overflow: hidden;
+}
+.bas{
+    color: #777;
+    margin-top: 30px;
+    font-size: 15px;
+}
+
+
+@media screen and (max-width: 1450px) {
+   .imm{
+    width: 600px;
+    justify-content: space-around !important;
+   }
+   .cadre{
+    width: 600px;
+   }
+  
+}
+@media screen and (max-width: 1350px) {
+    .imm{
+     width: 550px;
+     justify-content: space-around !important;
+    }
+    .cadre{
+     width: 550px;
+    }
+    .rond{
+        top: 90%;
+        left: 1%;
+    }
+    .danse{
+        max-width: 800px;
+        max-height: 400px ;
+        border-radius: 15px ;
+        justify-content: center;
+        align-items: center;
+    }
+    .im{
+        max-width: 800px;
+        max-height: 400px ;
+        align-items: center;
+        text-align: center;
+    }
+   
+ }
+
+ @media screen and (max-width: 1250px) {
+    .imm{
+     width: 500px;
+     justify-content: space-around !important;
+    }
+    .cadre{
+     width: 500px;
+    }
+    .danse{
+        max-width: 700px ;
+        max-height: 400px ;
+        border-radius: 15px ;
+        justify-content: center;
+        align-items: center;
+    }
+    .im{
+        max-width: 700px;
+        max-height: 400px ;
+        align-items: center;
+        text-align: center;
+    }
+    .stats{
+        display: flex;
+        flex-direction: column;
+    }
+    .im6{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+   
+ }
+
+@media screen and (max-width: 768px) {
+    .profile-info h1 {
+        font-size: 1.5rem;
+    }
+    .danse{
+        max-width: 500px ;
+        max-height: 400px ;
+        border-radius: 15px ;
+        justify-content: center;
+        align-items: center;
+    }
+    .im{
+        max-width: 500px;
+        max-height: 400px ;
+        align-items: center;
+        text-align: center;
+    }
+    .stats{
+        display: flex;
+        flex-direction: column;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    .im6{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .cadre{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile-info p {
+        font-size: 1rem;
+    }
+  
+    .stats h3 {
+        font-size: 1.6rem;
+    }
+
+    .stats p {
+        font-size: 0.9rem;
+    }
+
+    .note div {
+        width: 80%;
+    }
+
+    button {
+        width: 90%;
+        text-align: center;
+    }
+
+    .texte {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .note{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+  
+

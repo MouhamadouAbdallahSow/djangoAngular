@@ -1,0 +1,38 @@
+.text-primary {
+    color: #ff6600 !important; /* Orange vif */
+  }
+  
+  .border-warning {
+    border-color: #ff6600 !important; /* Orange vif */
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-outline-warning {
+    color: #ff6600;
+    border-color: #ff6600;
+  }
+  .btn-back {
+    background-color: transparent;
+    color: #ff6600;
+    border: 1px solid #ff6600;
+  }
+  .btn-back:hover {
+    background-color: #ff6600;
+    color: white;
+  }
+  .btn-next {
+    background-color: #1a1a2e;
+    color: white;
+  }
+  .btn-next:hover {
+    background-color: #0f0f1e;
+  }
+  
+  .progress-bar.bg-warning {
+    background-color: #ff6600 !important; /* Orange vif */
+  }
+  

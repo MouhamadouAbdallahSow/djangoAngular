@@ -1,0 +1,90 @@
+<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button
+      type="button"
+      data-bs-target="#heroCarousel"
+      data-bs-slide-to="0"
+      class="active"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#heroCarousel"
+      data-bs-slide-to="1"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#heroCarousel"
+      data-bs-slide-to="2"
+    ></button>
+  </div>
+
+  <div class="carousel-inner">
+    <div class="carousel-item active hero-section">
+      <div
+        class="slide-image"
+        style="
+          background-image: url('/assets/img/pexels-jibarofoto-2833037.jpg');
+        "
+      ></div>
+      <div class="blur-overlay"></div>
+      <div class="d-flex align-items-center justify-content-center h-100">
+        <div class="hero-content">
+          <h1>Bienvenue sur SEN-EVENT</h1>
+          <p>Explorez le Sénégal, un événement à la fois</p>
+          <button class="btn btn-custom btn-lg" routerLink="/events">
+            Découvrir les événements
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item hero-section">
+      <div
+        class="slide-image"
+        style="
+          background-image: url('/assets/img/pexels-jan-van-der-wolf-11680885-14501973.jpg');
+        "
+      ></div>
+      <div class="blur-overlay"></div>
+      <div class="d-flex align-items-center justify-content-center h-100">
+        <div class="hero-content">
+          <h1>Découvrez la Culture</h1>
+          <p>Les meilleurs événements culturels du Sénégal</p>
+          <button class="btn btn-custom btn-lg" routerLink="/events">
+            Explorer
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item hero-section">
+      <div
+        class="slide-image"
+        style="background-image: url('/assets/img/pexels-pixabay-269140.jpg')"
+      ></div>
+      <div class="blur-overlay"></div>
+      <div class="d-flex align-items-center justify-content-center h-100">
+        <div class="hero-content">
+          <h1>Créez Votre Événement</h1>
+          <p>Partagez vos moments uniques avec la communauté</p>
+          <button class="btn btn-custom btn-lg">Commencer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#heroCarousel"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#heroCarousel"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
