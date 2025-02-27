@@ -37,7 +37,8 @@ local_settings.py
 /bazel-out
 
 # Dépendances Node
-SEN-EVENT/node_modules/
+**/node_modules/
+SEN-EVENT/package-lock.json/
 npm-debug.log
 yarn-error.log
 
@@ -82,7 +83,7 @@ Thumbs.db
 # Fichiers générés par Django (statics et media)
 # ------------------------------
 # Dossier de fichiers statiques collectés (généré via collectstatic)
-staticfiles/
+auth/staticfiles/
 
 # Dossier des fichiers uploadés (si non versionnés)
-media/
+auth/media/
