@@ -112,20 +112,91 @@ textarea.form-control {
     background-color: #2a4585;
     transform: translateY(-2px);
 }
-@media (max-width: 768px) {
-    .contact-wrapper {
-        background: #1E3E62;
+/* Responsive Breakpoints */
+@media (max-width: 1200px) {
+    .form-container {
+        left: 45%;
+        max-width: 450px;
+    }
+}
+
+@media (max-width: 992px) {
+    .contact-title {
+        font-size: 2.5rem;
     }
     
-    .recruitment-text {
-        position: static;
-        text-align: center;
-        margin-bottom: 30px;
-        transform: none;
+    .form-container {
+        left: 50%;
+        max-width: 400px;
+        padding: 30px;
+    }
+    
+    .form-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-title {
         font-size: 2rem;
     }
-
+    
+    .contact-form {
+        flex-direction: column;
+    }
+    
+    .form-contact-section,
+    .recruitment {
+        width: 100%;
+    }
+    
+    .recruitment {
+        order: -1;
+        height: 250px;
+    }
+    
     .form-container {
-        margin: 0 20px;
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        max-width: 90%;
+        margin: -100px auto 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-info {
+        font-size: 0.9rem;
+    }
+    
+    .contact-header {
+        margin-bottom: 30px;
+    }
+    
+    .form-container {
+        padding: 20px;
+        margin-top: -80px;
+    }
+    
+    .form-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+    
+    .row {
+        display: block;
+    }
+    
+    .col-md-6 {
+        width: 100%;
+    }
+    
+    .recruitment {
+        height: 200px;
+    }
+    
+    .submit-btn {
+        padding: 10px 20px;
     }
 }

@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   scrollToSection(sectionId: string) {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -30,16 +30,27 @@ export class NavbarComponent {
 
   ngOnInit() {
     this.authService.isAuthenticated.subscribe((status) => {
+      console.log('Utilisateur authentifié ?', status); // Vérification
       this.isAuthenticated = status;
     });
 
     this.authService.user$.subscribe((user) => {
+      console.log('Utilisateur actuel:', user); // Vérification
       this.user = user;
     });
+  }
+  getProfileLink(): string {
+    const user = this.authService.getUser();
+    if (!user) {
+      return '/auth/se-connecter'; // Redirige vers login si pas d'utilisateur
+    }
+    return user.userType === 'creator'
+      ? '/profile/creator'
+      : '/profile/visitor';
   }
 
   logout() {
     this.authService.logout();
-    this.router.navigate(['/']);
+    this.router.navigate(['/homepage']);
   }
 }

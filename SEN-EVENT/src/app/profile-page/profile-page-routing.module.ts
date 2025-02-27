@@ -5,20 +5,18 @@ import { CreatorProfileComponent } from './creator-profile/creator-profile.compo
 import { ProfilesPageComponent } from './profile-pages/profile-page.component';
 import { Profil2Component } from './profil2/profil2.component';
 
-
 const routes: Routes = [
   {
     path: '',
     component: ProfilesPageComponent,
     children: [
-      { path: 'creator', component: CreatorProfileComponent},
-      { path: 'profil_visit', component: Profil2Component},
-      { path: 'visitor', component: VisitorProfileComponent},
-      { path: '',redirectTo: 'visitor', pathMatch: 'full' },
+      { path: 'creator', component: CreatorProfileComponent },
+      { path: 'profil_visit', component: Profil2Component },
+      { path: 'visitor', component: VisitorProfileComponent },
+      { path: '', redirectTo: 'visitor', pathMatch: 'full' },
       { path: '**', redirectTo: '/homepage' },
     ],
   },
-
 ];
 
 @NgModule({

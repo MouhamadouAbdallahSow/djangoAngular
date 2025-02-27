@@ -9,9 +9,9 @@ const routes: Routes = [
     path: '',
     component: EventsComponent,
     children: [
-      { path: '**', redirectTo: 'Evenements' }, // Déplacer cette ligne en haut
       { path: 'Evenements', component: PageDesEventsComponent },
       { path: 'evenement', component: EventPageComponent },
+      { path: '**', redirectTo: 'Evenements' }, // Déplacer cette ligne en haut
     ],
   },
 ];

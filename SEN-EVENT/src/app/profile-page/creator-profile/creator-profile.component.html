@@ -1,17 +1,431 @@
-<div class="profile">
+<!-- <div class="profile">
   <h2>Profil Créateur</h2>
   <p>Nom : {{ user?.name }}</p>
   <p>Email : {{ user?.email }}</p>
-  
-  <!-- Utiliser directement l'URL complète du profile_photo -->
+
+  Utiliser directement l'URL complète du profile_photo 
   <div *ngIf="user?.profile_photo">
     <h3>Photo de profil</h3>
-    <img [src]="user.profile_photo" alt="Photo profile" style="max-width: 200px;"/>
+    <img
+      [src]="user.profile_photo"
+      alt="Photo profile"
+      style="max-width: 200px"
+    />
   </div>
-  
-  <!-- Utiliser directement l'URL complète du cover_photo -->
+
+   Utiliser directement l'URL complète du cover_photo 
   <div *ngIf="user?.cover_photo">
     <h3>Photo de couverture</h3>
-    <img [src]="user.cover_photo" alt="Photo couverture" style="max-width: 400px;"/>
+    <img
+      [src]="user.cover_photo"
+      alt="Photo couverture"
+      style="max-width: 400px"
+    />
+  </div>
+</div> -->
+
+<div class="container">
+  <div
+    class="hero-image"
+    *ngIf="user?.cover_photo"
+    [ngStyle]="{ 'background-image': 'url(' + user.cover_photo + ')' }"
+  >
+    <div class="profile-card" *ngIf="user?.cover_photo">
+      <img
+        [src]="user.profile_photo"
+        alt="Photo profile"
+        class="profile-image"
+      />
+    </div>
+  </div>
+
+  <div class="profil_middle_section my-5">
+    <div class="descript_profil">
+      <h3 class="mb-0">{{ user?.name }}</h3>
+      <p class="text-muted">vous etes un createur</p>
+    </div>
+    <div class="modify_btn">
+      <a href="#" class="btn btn-custom">📝 Modifier le profil</a>
+    </div>
+  </div>
+
+  <div class="carousel-container">
+    <div id="eventCarousel" class="carousel-inner">
+      <!-- Premier slide (actif par défaut) -->
+      <div class="carousel-item active">
+        <div class="carousel-slide">
+          <div class="carousel-info">
+            <h2 class="carousel-title">
+              Rejoignez-nous pour un meeting de PASTEF :
+            </h2>
+            <p class="carousel-subtitle">
+              Échangeons ensemble pour un avenir meilleur et engagé !
+            </p>
+
+            <div class="info-item">
+              <div class="icon-container">
+                <i class="fas fa-calendar-alt text-white"></i>
+              </div>
+              <div class="info-content">
+                <div class="info-title">14 Novembre, 2024</div>
+                <div class="info-subtitle">DIMANCHE, 9H:00 - 13H:00</div>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="icon-container">
+                <i class="fas fa-map-marker-alt text-white"></i>
+              </div>
+              <div class="info-content">
+                <div class="info-title">PLACE DE L'INDEPENDANCE</div>
+                <div class="info-subtitle">38 Rue Dakar, SN</div>
+              </div>
+            </div>
+
+            <button class="btn btn-modify">
+              Modifier
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <div class="carousel-image">
+            <img
+              src="assets/images/Lopposant-senegalais-Ousmane-Sonko-8-2021-Dakar_0.webp"
+              alt="Meeting PASTEF"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Deuxième slide -->
+      <div class="carousel-item">
+        <div class="carousel-slide">
+          <div class="carousel-info">
+            <h2 class="carousel-title">Deuxième événement :</h2>
+            <p class="carousel-subtitle">
+              Venez célébrer avec nous un autre moment spécial !
+            </p>
+
+            <div class="info-item">
+              <div class="icon-container">
+                <i class="fas fa-calendar-alt"></i>
+              </div>
+              <div class="info-content">
+                <div class="info-title">21 Novembre, 2024</div>
+                <div class="info-subtitle">JEUDI, 15H:00 - 18H:00</div>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="icon-container">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="info-content">
+                <div class="info-title">SALLE DES FÊTES</div>
+                <div class="info-subtitle">123 Avenue Principale, SN</div>
+              </div>
+            </div>
+
+            <button class="btn btn-modify">
+              Modifier
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <div class="carousel-image">
+            <img
+              src="assets/images/70329104-49062953-1280x640.jpg"
+              alt="Deuxième événement"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Troisième slide -->
+      <div class="carousel-item">
+        <div class="carousel-slide">
+          <div class="carousel-info">
+            <h2 class="carousel-title">Troisième événement :</h2>
+            <p class="carousel-subtitle">
+              Ne manquez pas cette rencontre inédite !
+            </p>
+
+            <div class="info-item">
+              <div class="icon-container">
+                <i class="fas fa-calendar-alt text-white"></i>
+              </div>
+              <div class="info-content">
+                <div class="info-title">28 Novembre, 2024</div>
+                <div class="info-subtitle">SAMEDI, 10H:00 - 14H:00</div>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="icon-container">
+                <i class="fas fa-map-marker-alt text-white"></i>
+              </div>
+              <div class="info-content">
+                <div class="info-title">PARC CENTRAL</div>
+                <div class="info-subtitle">50 Rue Liberté, SN</div>
+              </div>
+            </div>
+
+            <button class="btn btn-modify">
+              Modifier
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <div class="carousel-image">
+            <img src="assets/images/OIP (4).jpeg" alt="Troisième événement" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-nav">
+      <div class="carousel-arrow prev-arrow" (click)="prevSlide()">
+        <i class="fas fa-arrow-left"></i>
+      </div>
+
+      <div class="carousel-dots">
+        <div
+          class="dot"
+          [ngClass]="{ active: currentSlide === 0 }"
+          (click)="showSlide(0)"
+        >
+          1
+        </div>
+        <div
+          class="dot"
+          [ngClass]="{ active: currentSlide === 1 }"
+          (click)="showSlide(1)"
+        >
+          2
+        </div>
+        <div
+          class="dot"
+          [ngClass]="{ active: currentSlide === 2 }"
+          (click)="showSlide(2)"
+        >
+          3
+        </div>
+      </div>
+
+      <div class="carousel-arrow next-arrow" (click)="nextSlide()">
+        <i class="fas fa-arrow-right"></i>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="event-param container d-flex justify-content-center align-items-center vh-100"
+  >
+    <div class="event-card">
+      <div class="icon-circle">
+        <i class="bi bi-pencil"></i>
+      </div>
+      <button
+        class="btn event-btn d-flex align-items-center justify-content-between"
+        routerLink="/CreateEvent/editer"
+      >
+        <span>Ajouter un évènement</span>
+        <div class="arrow-circle">
+          <i class="bi bi-arrow-right"></i>
+        </div>
+      </button>
+    </div>
+    <div class="event-card">
+      <div class="icon-circle">
+        <i class="bi bi-search"></i>
+      </div>
+      <button
+        class="btn event-btn d-flex align-items-center justify-content-between"
+        routerLink="/events/Evenements"
+      >
+        <span>Mes évènements</span>
+        <div class="arrow-circle">
+          <i class="bi bi-arrow-right"></i>
+        </div>
+      </button>
+    </div>
+  </div>
+  <!-- Statistiques -->
+  <div class="title-container">
+    <h2 class="section-title">Statistiques</h2>
+    <p class="description">
+      Voyez les statistiques relatives au evenements que vous avez organisées
+    </p>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="card big-card">
+          <div
+            class="card-body d-flex flex-column align-items-center justify-content-center"
+          >
+            <div class="event-thumbnail">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+                <path d="M8 14h.01"></path>
+                <path d="M12 14h.01"></path>
+                <path d="M16 14h.01"></path>
+                <path d="M8 18h.01"></path>
+                <path d="M12 18h.01"></path>
+                <path d="M16 18h.01"></path>
+              </svg>
+            </div>
+            <h5 class="card-title white-text">Nombre d'événements</h5>
+            <div class="big-number white-text">24</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect
+                      x="2"
+                      y="6"
+                      width="20"
+                      height="12"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <path d="M6 12h12"></path>
+                  </svg>
+                </div>
+                <h5 class="card-title">Tickets vendus</h5>
+                <div class="big-number">5700</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="icon icon-blue">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                    ></path>
+                    <line x1="9" y1="10" x2="15" y2="10"></line>
+                    <line x1="9" y1="14" x2="15" y2="14"></line>
+                  </svg>
+                </div>
+                <h5 class="card-title">Témoignages</h5>
+                <div class="big-number">256</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+                <h5 class="card-title">Participants Totals</h5>
+                <div class="big-number">6900</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="icon icon-blue">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect
+                      x="3"
+                      y="3"
+                      width="18"
+                      height="18"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <polyline points="21 15 16 10 5 21"></polyline>
+                  </svg>
+                </div>
+                <h5 class="card-title">Nombre de Vues</h5>
+                <div class="big-number">12K</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-12">
+        <button class="more-button">
+          More
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
   </div>
 </div>

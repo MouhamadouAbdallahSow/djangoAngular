@@ -15,7 +15,7 @@ const routes: Routes = [
       { path: 'banner', component: BanniereComponent },
       { path: 'ticket', component: TicketComponent },
       { path: 'reviser', component: ReviserComponent },
-      { path: '**', redirectTo: '/editer' },
+      { path: '**', redirectTo: 'editer' },
     ],
   },
 ];

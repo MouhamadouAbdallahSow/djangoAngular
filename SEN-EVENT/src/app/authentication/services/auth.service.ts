@@ -18,7 +18,13 @@ export class AuthService {
 
   private userType: string | null = null;
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router) {
+    const token = this.getToken();
+    if (token) {
+      this.authStatus.next(true);
+      this.loadUserData();
+    }
+  }
 
   private hasToken(): boolean {
     return !!localStorage.getItem(this.tokenKey);
@@ -26,6 +32,21 @@ export class AuthService {
 
   get isAuthenticated(): Observable<boolean> {
     return this.authStatus.asObservable();
+  }
+  loadUserData() {
+    this.getUserData().subscribe(
+      (userData) => {
+        this.userSubject.next(userData);
+        this.userType = userData.userType;
+      },
+      (error) => {
+        this.logout(); // Déconnecte si le token est invalide
+      }
+    );
+  }
+
+  setAuthenticated(status: boolean): void {
+    this.authStatus.next(status);
   }
 
   login(email: string, password: string): Observable<any> {
@@ -40,6 +61,7 @@ export class AuthService {
         switchMap(() => this.getUserData()),
         tap((userData) => {
           console.log('Données utilisateur:', userData); // Pour voir les données utilisateur
+          localStorage.setItem('user', JSON.stringify(userData));
           this.userSubject.next(userData);
           if (userData && userData.userType) {
             this.userType = userData.userType;
@@ -51,7 +73,7 @@ export class AuthService {
   }
 
   register(userData: any): Observable<any> {
-    userData.userType = this.userType;
+    userData.userType = this.userType ?? 'visitor';
     return this.http.post(`${this.apiUrl}/register/`, userData).pipe(
       tap((response) => {
         this.userSubject.next(response);
@@ -67,6 +89,15 @@ export class AuthService {
       this.userSubject.next(null);
       this.router.navigate(['/auth/se-connecter']);
     });
+  }
+  getUser(): any {
+    const user = this.userSubject.getValue();
+    if (user) {
+      return user;
+    }
+
+    const storedUser = localStorage.getItem('user');
+    return storedUser ? JSON.parse(storedUser) : null;
   }
 
   getUserData(): Observable<any> {

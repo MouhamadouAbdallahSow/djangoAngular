@@ -52,11 +52,11 @@
 
         <!-- Si l'utilisateur est connecté -->
         <ng-container *ngIf="isAuthenticated; else guestLinks">
-          <button class="btn btn-danger" (click)="logout()">
+          <button class="btn createCount" (click)="logout()">
             Se déconnecter
           </button>
-          <a routerLink="/profile" class="btn btn-outline-primary">
-            <i class="bi bi-person-circle"></i>
+          <a [routerLink]="getProfileLink()" class="btn mx-3">
+            <i class="bi bi-person" style="color: white"></i>
           </a>
         </ng-container>
 

@@ -1,51 +1,73 @@
-<div class="container px-4 ">
+<div class="container px-4">
   <h2 class="text-center mb-3">Se connecter</h2>
   <p class="text-center my-2">
-    Vous n'avez pas de compte ? 
+    Vous n'avez pas de compte ?
     <a routerLink="/auth/create-account" class="color-fav">Créer un compte</a>
   </p>
   <div class="container">
     <form (ngSubmit)="login()" novalidate class="px-4 my-2">
       <div class="my-3">
-        <input 
-          type="email" 
+        <input
+          type="email"
           [(ngModel)]="email"
-          name="email" 
-          id="email" 
-          class="form-control" 
-          placeholder="Email" 
-          required>
+          name="email"
+          id="email"
+          class="form-control"
+          placeholder="Email"
+          required
+        />
       </div>
       <div class="my-3">
-        <input 
-          type="password" 
-          [(ngModel)]="password" 
-          name="password" 
-          id="password" 
-          class="form-control" 
-          placeholder="Mot de passe" 
-          required>
+        <input
+          type="password"
+          [(ngModel)]="password"
+          name="password"
+          id="password"
+          class="form-control"
+          placeholder="Mot de passe"
+          required
+        />
       </div>
       <div class="my-2">
-        <a routerLink="/auth/forgot-password" class="color-fav my-2">Mot de passe oublié</a>
+        <a routerLink="/auth/forgot-password" class="color-fav my-2"
+          >Mot de passe oublié</a
+        >
       </div>
-      <button type="submit" [disabled]="isLoading" class="btn btn-outline-secondary w-100 my-2">
-        {{ isLoading ? 'Connexion en cours...' : 'Continuer' }}
-      </button>        
-      <p *ngIf="errorMessage" class="text-danger text-center mt-2">{{ errorMessage }}</p>
+      <button
+        type="submit"
+        [disabled]="isLoading"
+        class="btn btn-outline-secondary w-100 my-2"
+      >
+        {{ isLoading ? "Connexion en cours..." : "Continuer" }}
+      </button>
+      <p *ngIf="errorMessage" class="text-danger text-center mt-2">
+        {{ errorMessage }}
+      </p>
       <div class="separator my-3"><span>Ou</span></div>
+      <hr class="my-3" />
       <div class="social-login d-flex flex-column align-items-center">
-        <button class="btn btn-light w-100 d-flex align-items-center justify-content-center my-3">
-          <img src="assets/images/google-icon.png" class="social-icon" alt="Google">
-          <span class="text-petit">Se connecter avec Google</span>
+        <button
+          class="btn btn-light w-100 d-flex align-items-center justify-content-center my-2"
+        >
+          <img
+            src="assets/images/google.png"
+            class="social-icon"
+            alt="Google"
+          />
+          Se Connecter avec Google
         </button>
-        
-        <button class="btn btn-light w-100 d-flex align-items-center justify-content-center ">
-          <img src="assets/images/apple-icon.png" class="social-icon" alt="Apple">
-          <span class="text-petit">Se connecter avec Apple</span>
+
+        <button
+          class="btn btn-light w-100 d-flex align-items-center justify-content-center"
+        >
+          <img
+            src="assets/images/facebook.png"
+            class="social-icon"
+            alt="Apple"
+          />
+          Se Connecter avec Facebook
         </button>
       </div>
     </form>
   </div>
 </div>
-  

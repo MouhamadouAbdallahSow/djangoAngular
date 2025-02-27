@@ -57,35 +57,33 @@ export class CreateAccountComponent {
     if (this.coverPhoto) {
       formData.append('cover_photo', this.coverPhoto, this.coverPhoto.name);
     }
-
     this.authService.register(formData).subscribe({
       next: (response) => {
-        console.log('Inscription reussi ', response);
+        console.log('Inscription réussie', response);
+        this.authService.setAuthenticated(true);
         this.router.navigate(['/auth/user-type']);
       },
       error: (error) => {
-        // En cas d'erreur, afficher un message
         this.errorMessage = "Erreur lors de l'inscription. Veuillez réessayer.";
         console.error("Erreur lors de l'inscription :", error);
-        console.log('Donnees envoyees : ', formData); // To delete
       },
     });
   }
 
   onFileSelected(event: any, type: string) {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e: any) => {
-        if (type === 'profile') {
-          this.profilePhoto = file;
-          this.profilePhotoUrl = e.target.result;
-        } else if (type === 'cover') {
-          this.coverPhoto = file;
-          this.coverPhotoUrl = e.target.result;
-        }
-      };
-      reader.readAsDataURL(file);
-    }
+    const file = event.target.files?.[0];
+    if (!file) return; // Évite une erreur si aucun fichier n'est sélectionné.
+
+    const reader = new FileReader();
+    reader.onload = (e: any) => {
+      if (type === 'profile') {
+        this.profilePhoto = file;
+        this.profilePhotoUrl = e.target.result;
+      } else if (type === 'cover') {
+        this.coverPhoto = file;
+        this.coverPhotoUrl = e.target.result;
+      }
+    };
+    reader.readAsDataURL(file);
   }
 }

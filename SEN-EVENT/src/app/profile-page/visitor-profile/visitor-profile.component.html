@@ -1,21 +1,28 @@
-<div class="profile">
+<!-- <div class="profile">
   <h2>Profil Visiteur</h2>
   <p>Nom : {{ user?.name }}</p>
-  <p>Email : {{ user?.email }}</p>
-  
-  <!-- Utiliser directement l'URL complète du profile_photo -->
-  <div *ngIf="user?.profile_photo">
-    <h3>Photo de profil</h3>
-    <img [src]="user.profile_photo" alt="Photo profile" style="max-width: 200px;"/>
-  </div>
-  
-  <!-- Utiliser directement l'URL complète du cover_photo -->
-  <div *ngIf="user?.cover_photo">
-    <h3>Photo de couverture</h3>
-    <img [src]="user.cover_photo" alt="Photo couverture" style="max-width: 400px;"/>
-  </div>
-</div>
+  <p>Email : {{ user?.email }}</p> -->
 
+<!-- Utiliser directement l'URL complète du profile_photo -->
+<!-- <div *ngIf="user?.profile_photo">
+    <h3>Photo de profil</h3>
+    <img
+      [src]="user.profile_photo"
+      alt="Photo profile"
+      style="max-width: 200px"
+    />
+  </div> -->
+
+<!-- Utiliser directement l'URL complète du cover_photo -->
+<!-- <div *ngIf="user?.cover_photo">
+    <h3>Photo de couverture</h3>
+    <img
+      [src]="user.cover_photo"
+      alt="Photo couverture"
+      style="max-width: 400px"
+    />
+  </div>
+</div> -->
 
 <!-- <img
     src="assets/images/Lopposant-senegalais-Ousmane-Sonko-8-2021-Dakar_0.webp"
@@ -24,26 +31,33 @@
   />
  -->
 
- <div class="container">
-  <div class="hero-image">
-    <div class="profile-card">
-      <img src="assets/images/OIP (4).jpeg" class="profile-image" />
+<div class="container">
+  <div
+    class="hero-image"
+    *ngIf="user?.cover_photo"
+    [ngStyle]="{ 'background-image': 'url(' + user.cover_photo + ')' }"
+  >
+    <div class="profile-card" *ngIf="user?.cover_photo">
+      <img
+        [src]="user.profile_photo"
+        alt="Photo profile"
+        class="profile-image"
+      />
     </div>
   </div>
 
   <div class="profil_middle_section my-5">
     <div class="descript_profil">
-      <h3 class="mb-0">Ousmane Sonko</h3>
-      <p class="text-muted">Premier ministre du Sénégal</p>
+      <h3 class="mb-0">{{ user?.name }}</h3>
+      <p class="text-muted">vous etes un visiteur</p>
     </div>
     <div class="modify_btn">
       <a href="#" class="btn btn-custom">📝 Modifier le profil</a>
     </div>
   </div>
 
-  <div class="carousel-container">
+  <!-- <div class="carousel-container">
     <div id="eventCarousel" class="carousel-inner">
-      <!-- Premier slide (actif par défaut) -->
       <div class="carousel-item active">
         <div class="carousel-slide">
           <div class="carousel-info">
@@ -89,7 +103,6 @@
         </div>
       </div>
 
-      <!-- Deuxième slide -->
       <div class="carousel-item">
         <div class="carousel-slide">
           <div class="carousel-info">
@@ -133,7 +146,7 @@
         </div>
       </div>
 
-      <!-- Troisième slide -->
+   
       <div class="carousel-item">
         <div class="carousel-slide">
           <div class="carousel-info">
@@ -208,32 +221,20 @@
         <i class="fas fa-arrow-right"></i>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div
     class="event-param container d-flex justify-content-center align-items-center vh-100"
   >
     <div class="event-card">
       <div class="icon-circle">
-        <i class="bi bi-pencil"></i>
-      </div>
-      <button
-        class="btn event-btn d-flex align-items-center justify-content-between"
-      >
-        <span>Ajouter un évènement</span>
-        <div class="arrow-circle">
-          <i class="bi bi-arrow-right"></i>
-        </div>
-      </button>
-    </div>
-    <div class="event-card">
-      <div class="icon-circle">
         <i class="bi bi-search"></i>
       </div>
       <button
         class="btn event-btn d-flex align-items-center justify-content-between"
+        routerLink="/events/Evenements"
       >
-        <span>Mes évènements</span>
+        <span>Voir des évènements</span>
         <div class="arrow-circle">
           <i class="bi bi-arrow-right"></i>
         </div>
@@ -241,7 +242,7 @@
     </div>
   </div>
   <!-- Statistiques -->
-  <div class="title-container">
+  <!-- <div class="title-container">
     <h2 class="section-title">Statistiques</h2>
     <p class="description">
       Voyez les statistiques relatives au evenements que vous avez organisées
@@ -417,5 +418,5 @@
         </button>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>

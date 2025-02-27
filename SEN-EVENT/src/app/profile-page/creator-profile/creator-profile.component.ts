@@ -1,53 +1,58 @@
 // creator-profile.component.ts
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthService } from '../../authentication/services/auth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-creator-profile',
   templateUrl: './creator-profile.component.html',
-  styleUrl: './creator-profile.component.css'
+  styleUrl: './creator-profile.component.css',
 })
-export class CreatorProfileComponent implements OnInit {
+export class CreatorProfileComponent implements OnInit, OnDestroy {
   currentSlide = 0;
+
   user: any;
-  djangoServer = 'http://localhost:8000'; // URL de votre serveur Django
-  
+  djangoServer = 'http://localhost:8000'; // URL du serveur Django
+  private userSubscription!: Subscription;
+
   constructor(private authService: AuthService) {}
-  
+
   ngOnInit(): void {
-    // Le code s'exécutera après le chargement du composant
     this.showSlide(this.currentSlide);
-    this.authService.user$.subscribe(data => {
+
+    this.userSubscription = this.authService.user$.subscribe((data) => {
       if (data) {
-        // Créer une copie pour ne pas modifier l'original
-        this.user = {...data};
-        
-        // Corriger les URLs des images
-        if (this.user.profile_photo && this.user.profile_photo.startsWith('/media')) {
-          this.user.profile_photo = this.djangoServer + this.user.profile_photo;
-        }
-        if (this.user.cover_photo && this.user.cover_photo.startsWith('/media')) {
-          this.user.cover_photo = this.djangoServer + this.user.cover_photo;
-        }
-        
-        console.log("URLs corrigées:", this.user.profile_photo, this.user.cover_photo);
+        this.setUserData(data);
       } else {
-        // Récupérer depuis localStorage comme avant
         const storedUser = localStorage.getItem('user');
         if (storedUser) {
-          this.user = JSON.parse(storedUser);
-          // Appliquer aussi les corrections aux données du localStorage
-          if (this.user.profile_photo && this.user.profile_photo.startsWith('/media')) {
-            this.user.profile_photo = this.djangoServer + this.user.profile_photo;
-          }
-          if (this.user.cover_photo && this.user.cover_photo.startsWith('/media')) {
-            this.user.cover_photo = this.djangoServer + this.user.cover_photo;
-          }
+          this.setUserData(JSON.parse(storedUser));
+        } else {
+          this.authService.loadUserData(); // Charger les données depuis le backend si rien en cache
         }
       }
     });
   }
 
+  private setUserData(data: any): void {
+    this.user = { ...data };
+
+    // Corriger les URLs des images
+    if (this.user.profile_photo?.startsWith('/media')) {
+      this.user.profile_photo = this.djangoServer + this.user.profile_photo;
+    }
+    if (this.user.cover_photo?.startsWith('/media')) {
+      this.user.cover_photo = this.djangoServer + this.user.cover_photo;
+    }
+
+    console.log('Utilisateur chargé :', this.user);
+  }
+
+  ngOnDestroy(): void {
+    if (this.userSubscription) {
+      this.userSubscription.unsubscribe(); // Évite les fuites de mémoire
+    }
+  }
   // Méthode pour afficher un slide spécifique
   showSlide(n: number) {
     const slides = document.querySelectorAll('.carousel-item');
