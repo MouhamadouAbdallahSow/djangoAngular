@@ -37,7 +37,7 @@ local_settings.py
 /bazel-out
 
 # Dépendances Node
-/node_modules
+SEN-EVENT/node_modules/
 npm-debug.log
 yarn-error.log
 
