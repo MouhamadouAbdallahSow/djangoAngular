@@ -3,6 +3,7 @@
     height: 100vh;
     display: flex; /* Utilisation de flexbox pour un meilleur contrôle */
     align-items: center;
+    
     padding: 0;
 }
 
@@ -24,8 +25,9 @@
 }
 
 .hero-title {
-    font-size: 4rem;
+    font-size: 300%;
     font-weight: bold;
+    width: max-content;
     color: #ff4d00;
     margin-bottom: 1.5rem;
 }
@@ -45,10 +47,13 @@
 }
 
 .hero-image {
-    max-width: 100%; /* S'assure que l'image ne dépasse pas la largeur */
-    max-height: 90vh; /* Ajuste la hauteur sans débordement */
-    object-fit: cover; /* Garde l'image bien contenue */
-    border-radius: 10px;
+    position: absolute;
+    top: 2rem;
+    right: 0;
+    width: 50%;
+    max-height: 100vh;
+    object-fit: cover; 
+    border-bottom-left-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
@@ -68,11 +73,18 @@
 
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
     }
     
     .hero-subtitle {
         font-size: 1.2rem;
+    }
+    .hero-image {
+        position: absolute;
+        top: 10rem;
+        right: 0;
+        width: 50%;
+        max-height: 100vh;
     }
 
     .search-box {
@@ -169,13 +181,82 @@
 }
 
 .sort-dropdown {
-    padding: 0.5rem 1rem;
-    border: 2px solid #e0e0e0;
-    border-radius: 20px;
-    background: white;
-    color: #666;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #1E3E62;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 0.8rem 3rem 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
     cursor: pointer;
-}
+    box-shadow: 0 4px 15px rgba(30, 62, 98, 0.2);
+    transition: all 0.3s ease;
+    min-width: 220px;
+    text-align: left;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .sort-dropdown:hover {
+    background-color: #15304d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(30, 62, 98, 0.3);
+  }
+  
+  .sort-dropdown:focus {
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0 4px rgba(30, 62, 98, 0.3);
+  }
+  
+  /* Animation quand le dropdown est ouvert */
+  .sort-dropdown:focus {
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(30, 62, 98, 0.5);
+    }
+    70% {
+      box-shadow: 0 0 0 6px rgba(30, 62, 98, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(30, 62, 98, 0);
+    }
+  }
+  
+  /* Style pour les options du menu déroulant */
+  .sort-dropdown option {
+    background-color: #ffffff;
+    color: #333;
+    padding: 12px;
+    font-size: 1rem;
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .sort-dropdown {
+      font-size: 1rem;
+      padding: 0.7rem 2.5rem 0.7rem 1.2rem;
+      min-width: 180px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .sort-dropdown {
+      width: 100%;
+      font-size: 0.9rem;
+      padding: 0.6rem 2rem 0.6rem 1rem;
+    }
+  }
 .event-card {
     text-align: center;
 }

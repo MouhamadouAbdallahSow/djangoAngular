@@ -1,77 +1,67 @@
-/* Base styles and reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+
   
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
-    line-height: 1.6;
-  }
-  
-  /* Profile Card */
-  .profile-card {
+/* Profile Card */
+.profile-card {
     position: relative;
     margin-bottom: 4rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 0 0 15px 15px;
     background-color: #fff;
     overflow: hidden;
-  }
+}
   
-  .profile-card > img {
+.profile-card > img {
     width: 100%;
     height: 90vh;
     object-fit: cover;
     display: block;
-  }
+}
   
-  .rond {
+.rond {
     width: 180px;
     height: 180px;
     border-radius: 50%;
     border: 5px solid #fff;
     position: absolute;
-    top: 40%;
+    top: 75vh;
     left: 5%;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
+    z-index: 10;
+}
   
-  .rond img {
+.rond img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
+}
   
-  .profile-info {
+.profile-info {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: 1.5rem 3rem 1.5rem 220px;
-  }
+    margin-left: 5rem;
+}
   
-  .profile-info h1 {
+.profile-info h1 {
     font-size: 2rem;
     color: #1E3E62;
     margin-bottom: 0.5rem;
-  }
+}
   
-  .profile-info p {
+.profile-info p {
     color: #555;
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
-  }
+}
   
-  .but {
+.but {
     display: flex;
     gap: 1rem;
-  }
+}
   
-  button {
+button {
     padding: 0.75rem 1.5rem;
     border-radius: 30px;
     border: none;
@@ -79,29 +69,29 @@
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
-  }
+}
   
-  .abo {
+.abo {
     background-color: #1E3E62;
     color: #fff;
-  }
+}
   
-  .abo:hover {
-    background-color: #15304d;
-  }
+.abo:hover {
+    background-color: #FF6500;
+}
   
-  .mess {
+.mess {
     background-color: #f4f4f9;
     color: #1E3E62;
     border: 1px solid #1E3E62;
-  }
+}
   
-  .mess:hover {
+.mess:hover {
     background-color: #e8e8f0;
-  }
+}
   
-  /* Stats Section */
-  .stats {
+/* Stats Section */
+.stats {
     display: flex;
     padding: 1rem 3rem 2rem;
   }
@@ -130,34 +120,40 @@
     font-size: 1rem;
   }
   
-  /* Featured Image */
-  .im {
+/* Featured Image */
+.im {
     margin: 0 auto;
     max-width: 1000px;
-  }
+}
   
-  .danse {
+.danse {
     width: 100%;
     height: auto;
     border-radius: 15px;
     object-fit: cover;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-  }
+}
   
-  .danse:hover {
+.danse:hover {
     transform: scale(1.01);
-  }
+}
   
-  /* Filter Section */
-  .note {
+/* Filter Section */
+.note {
     display: flex;
     justify-content: space-between;
-    gap: 2rem;
-    margin: 3rem 0;
-  }
+    margin: 2rem 3rem;
+    flex-wrap: wrap;
+}
+
+.left-note {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
   
-  .note div {
+.note .left-note > div, .note .right-note {
     background-color: #1E3E62;
     color: #fff;
     padding: 0.8rem 1.5rem;
@@ -165,213 +161,318 @@
     font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.2s ease;
-  }
-  
-  .note div:hover {
-    background-color: #15304d;
+    margin-bottom: 0.5rem;
+}
+.note .left-note > div:hover, .note .right-note:hover {
+    background-color: #FF6500;
     transform: translateY(-2px);
-  }
+}
   
-  /* Content Grid */
-  .im6 {
+/* Content Grid */
+.im6 {
     display: flex;
     justify-content: center;
     gap: 2.5rem;
     margin-bottom: 3rem;
     padding: 0 1.5rem;
-  }
+    flex-wrap: wrap;
+}
   
-  .cadre {
+.cadre {
     background-color: #fff;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     flex: 1;
+    min-width: 300px;
     max-width: 600px;
-  }
+}
   
-  .cadre:hover {
+.cadre:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  }
+}
   
-  .imm {
+.imm {
     width: 100%;
     height: 240px;
     object-fit: cover;
     display: block;
-  }
+}
   
-  .texte {
+.texte {
     display: flex;
     padding: 1.5rem;
     gap: 1.5rem;
-  }
+}
   
-  .texte > div:first-child {
+.texte > div:first-child {
     display: flex;
     flex-direction: column;
     align-items: center;
     min-width: 60px;
-  }
+}
   
-  .mois {
+.mois {
     font-size: 1rem;
     font-weight: bold;
     color: #1E3E62;
     text-transform: uppercase;
-  }
+}
   
-  .jour {
+.jour {
     font-size: 1.8rem;
     font-weight: bold;
     color: #333;
-  }
+}
   
-  .texte > div:last-child {
+.texte > div:last-child {
     font-size: 1.1rem;
     color: #333;
     font-weight: 600;
     line-height: 1.5;
-  }
+}
   
-  .bas {
+.bas {
     color: #777;
     font-size: 0.9rem;
     margin-top: 1rem;
     font-weight: normal;
-  }
-  
-  /* Media Queries */
-  @media screen and (max-width: 1200px) {
-    .im6 {
-      gap: 1.5rem;
-    }
-    
-    .stat {
-      margin-left: 150px;
-    }
-  }
-  
-  @media screen and (max-width: 992px) {
-    .profile-info {
-      padding-left: 180px;
-    }
-    
-    .rond {
-      width: 150px;
-      height: 150px;
-      top: 240px;
-    }
-    
-    .stat {
-      margin-left: 100px;
-      gap: 2rem;
+}
+
+/* Grand écran */
+@media screen and (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+        margin: 0 auto;
     }
     
     .im6 {
-      flex-direction: column;
-      align-items: center;
+        max-width: 1320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+  
+/* Media Queries */
+@media screen and (max-width: 1200px) {
+    
+    .im6 {
+        gap: 1.5rem;
     }
     
-    .cadre {
-      max-width: 100%;
-      width: 100%;
+    .im {
+        margin-top: 2rem;
     }
-  }
+}
   
-  @media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
     .profile-card > img {
-      height: 200px;
+        height: 60vh;
     }
-    
-    .rond {
-      width: 120px;
-      height: 120px;
-      top: 140px;
+    .profile-info{
+        padding: 1.2rem 0rem 1.2rem 180px;
+        margin-left: 10%;
+        gap: 1rem; 
     }
-    
-    .profile-info {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 1rem 1.5rem 1rem 150px;
-    }
-    
     .profile-info h1 {
-      font-size: 1.5rem;
+        width:max-content;
+        font-size: 1.5rem;
     }
     
     .profile-info p {
-      font-size: 1rem;
-    }
-    
-    .but {
-      margin-top: 1rem;
-    }
-    
-    .stat {
-      flex-direction: row;
-      margin-left: 0;
-      justify-content: space-around;
-      width: 100%;
-    }
-    
-    .note {
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-    }
-    
-    .note div {
-      width: 80%;
-      text-align: center;
-    }
-  }
-  
-  @media screen and (max-width: 576px) {
-    .profile-card > img {
-      height: 150px;
+        font-size: 0.8rem;
     }
     
     .rond {
-      width: 100px;
-      height: 100px;
-      top: 100px;
+        width: 150px;
+        height: 150px;
+        top: 50vh;
     }
     
-    .profile-info {
-      padding: 3.5rem 1rem 1rem 1rem;
-      text-align: center;
+    .stats {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 1rem 3rem 2rem;
+    }
+      
+    .stat {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5rem;
+    }
+      
+      
+    
+    
+    .cadre {
+        flex: 0 0 calc(50% - 1.25rem);
+        min-width: 280px;
+    }
+}
+  
+@media screen and (max-width: 768px) {
+    .profile-card > img {
+        height: 40vh;
+    }
+    .profile-info{
+        padding: 1.2rem 0rem 1.2rem 180px;
+        margin-left: 0%;
+        gap: 1rem; 
+    }
+    .rond {
+        width: 120px;
+        height: 120px;
+        top: 35vh;
+    }
+
+    
+    .profile-info h1 {
+        font-size: 1.3rem;
+    }
+    
+    .profile-info p {
+        font-size: 1rem;
+    }
+    .but {
+        flex-direction: column;
+        width: 10%;
+        gap: 0.5rem;
+    }
+    .abo,.mess{
+        font-size: smaller;
+        width: max-content;
+    }
+    
+    
+    .note {
+        margin: 2rem 1.5rem;
+    }
+    
+    .left-note, .note {
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    
+    .right-note {
+        margin-top: 0.5rem;
+    }
+    
+    .im6 {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .cadre {
+        max-width: 100%;
+        min-width: auto;
+    }
+}
+  
+@media screen and (max-width: 576px) {
+    .profile-card > img {
+        height: 30vh;
+    }
+    
+    .rond {
+        width: 100px;
+        height: 100px;
+        top: 25vh;
+    }
+    
+    .profile-info{
+        padding: 1.2rem 0rem 1.2rem 180px;
+        margin-left: 0%;
+        gap: 1rem; 
     }
     
     .but {
-      flex-direction: column;
-      width: 100%;
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
     }
     
     button {
-      width: 100%;
+        width: 100%;
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
     }
     
     .stat {
-      flex-direction: column;
-      gap: 1.5rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .stat div {
+        width: 100%;
     }
     
     .texte {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1rem;
     }
     
     .texte > div:first-child {
-      flex-direction: row;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
+        flex-direction: row;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
     }
     
     .jour, .mois {
-      font-size: 1.2rem;
+        font-size: 1.2rem;
     }
-  }
+    
+    .imm {
+        height: 180px;
+    }
+    
+    .note .left-note > div, .note .right-note {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .profile-card > img {
+        height: 25vh;
+    }
+    
+    .rond {
+        width: 80px;
+        height: 80px;
+        bottom: 120px;
+    }
+    
+    .profile-info h1 {
+        font-size: 1.2rem;
+    }
+    
+    .profile-info p {
+        font-size: 0.9rem;
+    }
+    
+    .texte > div:last-child {
+        font-size: 1rem;
+    }
+    
+    .bas {
+        font-size: 0.8rem;
+    }
+    
+    .note {
+        margin: 1.5rem 1rem;
+    }
+    
+    .im6 {
+        padding: 0 1rem;
+    }
+}
